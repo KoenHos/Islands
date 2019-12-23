@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/koenhos/Projects/Mountains/Matividiri/Matividiri/Matividiri.csproj",
+      "projectUniqueName": "/Users/koenhos/Projects/Islands/Matividiri/Matividiri/Matividiri.csproj",
       "projectName": "Matividiri",
-      "projectPath": "/Users/koenhos/Projects/Mountains/Matividiri/Matividiri/Matividiri.csproj",
+      "projectPath": "/Users/koenhos/Projects/Islands/Matividiri/Matividiri/Matividiri.csproj",
       "packagesPath": "/Users/koenhos/.nuget/packages/",
-      "outputPath": "/Users/koenhos/Projects/Mountains/Matividiri/Matividiri/obj/",
+      "outputPath": "/Users/koenhos/Projects/Islands/Matividiri/Matividiri/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/koenhos/.config/NuGet/NuGet.Config"
