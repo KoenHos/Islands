@@ -1,19 +1,25 @@
-﻿<Properties StartupConfiguration="{EC9958C4-7435-49C9-883B-72F48BA8C7EB}|Default">
-  <MonoDevelop.Ide.ItemProperties.Matividiri FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Matividiri/Controllers/WeatherForecastController.cs">
+﻿<Properties StartupConfiguration="{5D219F9C-F308-40F8-B997-33715B3758A1}|Default">
+  <MonoDevelop.Ide.ItemProperties.Matividiri PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="IslandWebsite/Pages/Islands/TopRated.cshtml.cs">
     <Files>
-      <File FileName="Matividiri/Models/Island.cs" Line="11" Column="2" />
-      <File FileName="Matividiri/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
+      <File FileName="IslandWebsite/Pages/Islands/TopRated.cshtml" Line="6" Column="22" />
+      <File FileName="IslandWebsite/Pages/Islands/TopRated.cshtml.cs" Line="12" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Matividiri" expanded="True">
-            <Node name="Matividiri" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="WeatherForecastController.cs" selected="True" />
+            <Node name="IslandWebsite" expanded="True">
+              <Node name="Pages" expanded="True">
+                <Node name="Islands" expanded="True">
+                  <Node name="TopRated.cshtml" expanded="True">
+                    <Node name="TopRated.cshtml.cs" selected="True" />
+                  </Node>
+                </Node>
+                <Node name="Shared" expanded="True" />
+                <Node name="Index.cshtml" expanded="True" />
               </Node>
-              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -21,7 +27,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.IslandWebsite FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.IslandWebsite PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
