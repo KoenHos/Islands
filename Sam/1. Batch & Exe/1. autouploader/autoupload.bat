@@ -1,4 +1,4 @@
-@echo "you need to put in your own information and path info
+@echo "you need to put in your own information and path info"
 E:
 cd git
 git pull
