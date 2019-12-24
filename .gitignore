@@ -15,7 +15,7 @@ test-results/
 *.dmg
 *.app
 # Zelf toegevoegd:
-*.DS-Store 
+*.DS_Store 
 
 # content below from: https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
 # General
