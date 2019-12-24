@@ -11,4 +11,12 @@
   <ItemGroup>
     <Folder Include="Pages\Islands\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aruba.Data\Aruba.Data.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Aruba.Core\Aruba.Core.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
