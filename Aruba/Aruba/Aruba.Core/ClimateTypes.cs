@@ -1,19 +1,17 @@
 ﻿using System;
 namespace Aruba.Core
 {
-    public class ClimateTypes
+    public enum ClimateType
     {
-        public enum ClimateType
-        {
-            None,
-            Tropical,
-            Dry,
-            Temperate,
-            Continental,
-            Polar,
-            Alpine,
-        }
+        None,
+        Tropical,
+        Dry,
+        Temperate,
+        Continental,
+        Polar,
+        Alpine,
     }
+
 }
 
 //Tropical Climates

@@ -1,0 +1,24 @@
+﻿@page "{islandId:int}"
+@model DetailModel
+@{
+}
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+
+<h2>@Model.Island.Name</h2>
+
+<div>
+    Id: @Model.Island.Id
+</div>
+<div>
+    Rating: @Model.Island.Rating
+</div>
+
+<div>
+    Climate Type: @Model.Island.ClimateType
+</div>
+
+<a asp-page="./TopRated" class="btn btn-primary">Back to list</a>
