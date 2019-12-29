@@ -15,9 +15,6 @@ namespace Aruba.Pages.Islands
         public string Message { get; set; }
         public IEnumerable<Island> Islands { get; set; }
 
-        [BindProperty(SupportsGet = true)]
-        public string SearchTerm { get; set; }
-
         private IConfiguration configuration;
         private IIslandData islandData;
 
@@ -30,7 +27,7 @@ namespace Aruba.Pages.Islands
         public void OnGet()
         {
             Message = configuration["Message"];
-            Islands = islandData.GetByName(SearchTerm);
+            Islands = islandData.GetAllIslands();
         }
     }
 

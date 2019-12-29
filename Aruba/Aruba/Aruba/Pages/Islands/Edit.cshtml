@@ -1,33 +1,4 @@
-﻿@page "{islandId:int?}"
+﻿@page
 @model EditModel
 @{
 }
-
-<h2>Editing @Model.Island.Name</h2>
-
-<form method="post">
-    <input type="hidden" asp-for="Island.Id" />
-    <div class="form-group">
-        <label asp-for="Island.Name"></label>
-        <input asp-for="Island.Name" class="form-control"/>
-        <span asp-validation-for="Island.Name" class="text-danger"></span>
-    </div>
-     <div class="form-group">
-        <label asp-for="Island.Rating"></label>
-        <input asp-for="Island.Rating" class="form-control"/>
-         <span asp-validation-for="Island.Rating" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Island.ClimateType"></label>
-        <select asp-for="Island.ClimateType"
-                asp-items="Model.Climates"
-                class="form-control">
-        </select>
-        <span asp-validation-for="Island.ClimateType" class="text-danger"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Save</button>
-</form>
-
-<a asp-page="./TopRated" class="btn btn-primary">Back to list</a>
