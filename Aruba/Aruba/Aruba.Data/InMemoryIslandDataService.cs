@@ -5,11 +5,11 @@ using Aruba.Core;
 
 namespace Aruba.Data
 {
-    public class InMemoryIslandData : IIslandData
+    public class InMemoryIslandDataService : IIslandDataService
     {
         readonly List<Island> Islands;
 
-        public InMemoryIslandData()
+        public InMemoryIslandDataService()
         {
             Islands = new List<Island>()
             {
@@ -67,7 +67,7 @@ namespace Aruba.Data
             return island;
         }
 
-        public Island delete(int id)
+        public Island Delete(int id)
         {
             var island = Islands.SingleOrDefault<Island>(i => i.Id == id);
             if (island != null)
@@ -82,5 +82,9 @@ namespace Aruba.Data
             return 0;
         }
 
+        public int GetCountOfIslands()
+        {
+            return Islands.Count();
+        }
     }
 }

@@ -1,0 +1,37 @@
+﻿@page
+@model TopRatedModel
+@{
+    ViewData["Title"] = "Top Rated";
+}
+
+<h1>Top Rated Islands</h1>
+
+<form action="" method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-primary">
+                    <i class="fas fa-search">
+                        Search
+                    </i>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+
+@foreach (var island in Model.Islands)
+{
+    <partial name="_Summary" model="island" />
+}
+
+<a asp-page="./Edit" class="btn btn-primary">Add new</a>
+
+
+@section footer {
+    | @Model.Message
+}
+
+
+

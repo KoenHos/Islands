@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Aruba.Pages.Islands
 {
-    public class TopRatedModel : PageModel
+    public class TopRatedCardModel : PageModel
     {
         public string Message { get; set; }
         public IEnumerable<Island> Islands { get; set; }
@@ -21,7 +21,7 @@ namespace Aruba.Pages.Islands
         private IConfiguration configuration;
         private IIslandDataService islandData;
 
-        public TopRatedModel(IConfiguration configuration, IIslandDataService islandData)
+        public TopRatedCardModel(IConfiguration configuration, IIslandDataService islandData)
         {
             this.configuration = configuration;
             this.islandData = islandData;

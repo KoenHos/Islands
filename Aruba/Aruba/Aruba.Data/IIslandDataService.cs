@@ -6,13 +6,14 @@ using static Aruba.Core.ClimateType;
 
 namespace Aruba.Data
 {
-    public interface IIslandData
+    public interface IIslandDataService
     {
         IEnumerable<Island> GetByName(string name);
         Island GetById(int id);
         Island Update(Island island);
         Island Add(Island island);
-        Island delete(int id);
+        Island Delete(int id);
+        int GetCountOfIslands();
         int Commit();
     }
 

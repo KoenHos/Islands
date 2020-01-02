@@ -10,6 +10,9 @@
 
   <ItemGroup>
     <Folder Include="Pages\Islands\" />
+    <Folder Include="ViewComponents\" />
+    <Folder Include="Pages\Shared\Components\" />
+    <Folder Include="Pages\Shared\Components\IslandCount\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aruba.Data\Aruba.Data.csproj">
@@ -18,5 +21,12 @@
     <ProjectReference Include="..\Aruba.Core\Aruba.Core.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="4.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>

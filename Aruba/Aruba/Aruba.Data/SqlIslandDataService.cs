@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Aruba.Data
 {
-    public class SqlIslandData : IIslandData
+    public class SqlIslandDataService : IIslandDataService
     {
         private readonly IslandDbContext db;
 
-        public SqlIslandData(IslandDbContext db)
+        public SqlIslandDataService(IslandDbContext db)
         {
             this.db = db;
         }
@@ -26,7 +26,7 @@ namespace Aruba.Data
             return db.SaveChanges();
         }
 
-        public Island delete(int id)
+        public Island Delete(int id)
         {
             var island = GetById(id);
             if (island != null)
@@ -49,6 +49,11 @@ namespace Aruba.Data
 #pragma warning restore RECS0063 // Warns when a culture-aware 'StartsWith' call is used by default.
                         select i;
             return query;
+        }
+
+        public int GetCountOfIslands()
+        {
+            return db.Islands.Count();
         }
 
         public Island Update(Island updatedIsland)

@@ -1,3 +1,90 @@
 ﻿@page
 @{
+    ViewData["Title"] = "NotFound";
 }
+
+<h2>Not Found</h2>
+<p>The Island you are looking for was not found</p>
+
+<a asp-page="./TopRated" class="btn btn-primary">To Top Rated list</a>
+
+<p>
+    <strong>Test db connection with SQL server running in a docker container</strong>
+    koenhos@Koens-MacBook-Air aruba.data % dotnet ef dbcontext info -s ../Aruba/Aruba.csproj
+    Build started...
+    Build succeeded.
+    info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+    Entity Framework Core 3.1.0 initialized 'IslandDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128
+    Provider name: Microsoft.EntityFrameworkCore.SqlServer
+    Database name: IslandsDb
+    Data source: localhost,1433
+    Options: MaxPoolSize=128
+    koenhos@Koens-MacBook-Air aruba.data % docker ps
+    CONTAINER ID        IMAGE COMMAND                  CREATED STATUS              PORTS NAMES
+    31f5e07a4c92 microsoft/mssql-server-linux   "/opt/mssql/bin/sqls…"   19 hours ago        Up 19 hours         0.0.0.0:1433->1433/tcp sql_server_demo
+</p>
+<p>
+    <strong>Initial migration</strong>
+    koenhos@Koens-MacBook-Air aruba.data % dotnet ef migrations add initialcreate -s ../Aruba/Aruba.csproj
+    Build started...
+    Build succeeded.
+    info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+    Entity Framework Core 3.1.0 initialized 'IslandDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128
+    Done. To undo this action, use 'ef migrations remove'
+    koenhos@Koens-MacBook-Air aruba.data %
+</p>
+<p>
+    <strong>dotnet ef database update</strong>
+    koenhos@Koens-MacBook-Air aruba.data % dotnet ef database update -s ../Aruba/Aruba.csproj
+    Build started...
+    Build succeeded.
+    info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+    Entity Framework Core 3.1.0 initialized 'IslandDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128
+    info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+    Executed DbCommand (979ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+    CREATE DATABASE [IslandsDb];
+    info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+    Executed DbCommand (343ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+    IF SERVERPROPERTY('EngineEdition') <> 5
+    BEGIN
+    ALTER DATABASE [IslandsDb] SET READ_COMMITTED_SNAPSHOT ON;
+    END;
+    info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+    Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+    SELECT 1
+    info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+    Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+    CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+    info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+    Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+    SELECT 1
+    info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+    Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+    SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+    info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+    Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+    SELECT [MigrationId], [ProductVersion]
+    FROM [__EFMigrationsHistory]
+    ORDER BY [MigrationId];
+    info: Microsoft.EntityFrameworkCore.Migrations[20402]
+    Applying migration '20191229145503_initialcreate'.
+    Applying migration '20191229145503_initialcreate'.
+    info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+    Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+    CREATE TABLE [Islands] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(80) NOT NULL,
+    [Rating] int NOT NULL,
+    [ClimateType] int NOT NULL,
+    CONSTRAINT [PK_Islands] PRIMARY KEY ([Id])
+    );
+    info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+    Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20191229145503_initialcreate', N'3.1.0');
+    Done.
+</p>

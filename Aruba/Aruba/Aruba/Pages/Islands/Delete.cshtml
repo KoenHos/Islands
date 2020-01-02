@@ -1,0 +1,31 @@
+﻿@page "{islandId:int}"
+@model DeleteModel
+@{
+    Layout = "_LayoutDelete";
+    ViewData["Title"] = "Delete";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewoort" content="wirdt=device-width">
+    <title>Delete</title>
+</head>
+<body>
+    <br>
+    <div class="jumbotron">
+        <h2>Delete</h2>
+        This page is using a special layout.
+    </div>
+    <div class="alert alert-danger">
+        Are you sure you want to delete <strong>@Model.Island.Name</strong>?
+    </div>
+
+    <form method="post">
+        <button class="btn btn-danger">Yes!</button>
+        <a asp-page="TopRated" class="btn btn-secondary">Cancel</a>
+    </form>
+        
+</body>
+</html>
