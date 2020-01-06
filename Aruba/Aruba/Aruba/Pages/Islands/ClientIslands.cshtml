@@ -1,0 +1,57 @@
+﻿@page
+@model ClientIslandsModel
+@{
+    ViewData["Title"] = "ClientIslands";
+}
+
+<h2>Client Islands</h2>
+
+<div class="alert alert-info" role="alert">
+    <strong>Datatables</strong> is only used on this page, therefore it is configured only as part of this page instead of in the layout-file.
+    For more info visit the <a href="https://datatables.net" target="_blank">Datatables website</a>
+</div>
+
+<table class="table" id="islands">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Climate Type</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+</table>
+
+@section Scripts  {
+
+    <environment include="Development">
+        <script src="~/node_modules/datatables.net/js/jquery.dataTables.js"></script>
+        <script src="~/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+        <link href="~/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css" />
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+    </environment>
+
+    <script>$(function () {
+
+            //ToDo: The climate type names/display text should come from the server using the enum instead of duplicating this here
+            var climateTypes = ["Unknown", "Tropical", "Dry", "Temperate", "Continental", "Polar", "Alpine"]
+
+            $.ajax("/api/islands/",
+                { mthod: "get" })
+                .then(function (response) {
+                    console.dir(response);
+                    $("#islands").dataTable({
+                        data: response,
+                        columns: [
+                            { "data": "name", "header": "name" },
+                            { "data": "climateType", "render": function (data) { return climateTypes[data]; } },
+                            { "data": "rating" }
+                        ]
+                    });
+
+                });
+        });</script>
+
+}

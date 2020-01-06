@@ -4,7 +4,67 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="jumbotron">
+    <h1 class="display-4">Welcome...</h1>
+    <p class="lead">...to a learning website created from Aruba</p>
+    <hr class="my-4">
+    <img class="text-center" src="/images/aruba.jpg" />
 </div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <img style="height: 100%; width: 100%; object-fit: contain" src="/images/SqlServer.png" />
+                    <h6 class="card-subtitle mb-2 text-muted">SQL server on Mac</h6>
+                    <p class="card-text">This website is using an SQL server to store island data.</p>
+                    <a href="https://database.guide/how-to-install-sql-server-on-a-mac/" target="_blank" class="card-link">how-to-install-sql-server-on-a-mac</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <img style="height: 100%; width: 100%; object-fit: contain" src="/images/docker.png" />
+                    <h5 class="card-title">Docker</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">SQL server via Docker</h6>
+                    <p class="card-text">This website was developed using a Docker containter to host an SQL Server</p>
+                    <a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-bash" target="_blank" class="card-link">quickstart-install-connect-docker</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-subtitle mb-2 text-muted">To Do</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Managing development and production scripts</h6>
+                <p class="card-text">Add JQuery and Bootstrap to Package.json and remove them from wwwroot. Consider to include node_modules into the project.</p>
+                <a href="https://app.pluralsight.com/course-player?clipId=8adcbdf3-1b3e-4ee9-badc-3d602ce41bb5" target="_blank" class="card-link">npm install</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-subtitle mb-2 text-muted">To Do</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Remove unused usings</h6>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-subtitle mb-2 text-muted">To Do</h5>
+                <h6 class="card-subtitle mb-2 text-muted">ClientIslands.cshtm: Remove hard coded climtate types</h6>
+                <p class="card-text">Get the names of the climate types via an api call direclty via the enum</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

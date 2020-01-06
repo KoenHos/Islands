@@ -22,10 +22,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Islands/TopRated">Top Rates Islands</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Islands/TopRated">Islands</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Islands/TopRatedCard">Top Rates Islands as Cards</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Islands/TopRatedCard">Islands as Cards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Islands/ClientIslands">Islands via Ajax</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
@@ -45,7 +48,7 @@
         <div class="container">
             <vc:island-count></vc:island-count>
             @RenderSection("footer", required: false)
-            | &copy; 2019 - Aruba - <a asp-area="" asp-page="/Privacy">Privacy</a>       
+            | &copy; 2019 - Aruba - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 

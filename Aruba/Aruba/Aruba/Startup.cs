@@ -34,6 +34,7 @@ namespace Aruba
             services.AddScoped<IIslandDataService, SqlIslandDataService>();
 
             services.AddRazorPages();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +53,7 @@ namespace Aruba
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseNodeModules();
 
             app.UseRouting();
 
@@ -60,7 +62,9 @@ namespace Aruba
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
+
         }
     }
 }

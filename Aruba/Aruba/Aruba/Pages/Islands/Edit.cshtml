@@ -10,13 +10,13 @@
     <input type="hidden" asp-for="Island.Id" />
     <div class="form-group">
         <label asp-for="Island.Name"></label>
-        <input asp-for="Island.Name" class="form-control"/>
+        <input asp-for="Island.Name" class="form-control" />
         <span asp-validation-for="Island.Name" class="text-danger"></span>
     </div>
-     <div class="form-group">
+    <div class="form-group">
         <label asp-for="Island.Rating"></label>
-        <input asp-for="Island.Rating" class="form-control"/>
-         <span asp-validation-for="Island.Rating" class="text-danger"></span>
+        <input asp-for="Island.Rating" class="form-control" />
+        <span asp-validation-for="Island.Rating" class="text-danger"></span>
     </div>
 
     <div class="form-group">
@@ -32,3 +32,7 @@
 </form>
 
 <a asp-page="./TopRated" class="btn btn-primary">Back to list</a>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
