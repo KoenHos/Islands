@@ -8,39 +8,45 @@
     <h1 class="display-4">Welcome...</h1>
     <p class="lead">...to a learning website created from Aruba</p>
     <hr class="my-4">
-    <img class="text-center" src="/images/aruba.jpg" />
+    <img class="text-center" src="/images/aruba.jpg" style="height: 100%;
+        width: 100%;
+        object-fit: contain" />
 </div>
 
 <div class="jumbotron">
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <img style="height: 100%; width: 100%; object-fit: contain" src="/images/SqlServer.png" />
-                    <h6 class="card-subtitle mb-2 text-muted">SQL server on Mac</h6>
-                    <p class="card-text">This website is using an SQL server to store island data.</p>
-                    <a href="https://database.guide/how-to-install-sql-server-on-a-mac/" target="_blank" class="card-link">how-to-install-sql-server-on-a-mac</a>
-                </div>
+    <div class="card-columns">
+
+        <div class="card" >
+            <div class="card-body">
+                <img style="        height: 100%;
+        width: 100%;
+        object-fit: contain" src="/images/SqlServer.png" />
+                <h6 class="card-subtitle mb-2 text-muted">SQL server on Mac</h6>
+                <p class="card-text">This website is using an SQL server to store island data.</p>
+                <a href="https://database.guide/how-to-install-sql-server-on-a-mac/" target="_blank" class="card-link">how-to-install-sql-server-on-a-mac</a>
+            </div>
+
+        </div>
+
+        <div class="card" >
+            <div class="card-body">
+                <img style="        height: 100%;
+        width: 100%;
+        object-fit: contain" src="/images/docker.png" />
+                <h5 class="card-title">Docker</h5>
+                <h6 class="card-subtitle mb-2 text-muted">SQL server via Docker</h6>
+                <p class="card-text">This website was developed using a Docker contaiter to host an SQL Server</p>
+                <a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-bash" target="_blank" class="card-link">quickstart-install-connect-docker</a>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <img style="height: 100%; width: 100%; object-fit: contain" src="/images/docker.png" />
-                    <h5 class="card-title">Docker</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">SQL server via Docker</h6>
-                    <p class="card-text">This website was developed using a Docker containter to host an SQL Server</p>
-                    <a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-bash" target="_blank" class="card-link">quickstart-install-connect-docker</a>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 
 <div class="jumbotron">
-    <div class="row">
+    <div class="card-columns">
 
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-body">
                 <h5 class="card-subtitle mb-2 text-muted">To Do</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Managing development and production scripts</h6>
@@ -49,18 +55,34 @@
             </div>
         </div>
 
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-body">
                 <h5 class="card-subtitle mb-2 text-muted">To Do</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Remove unused usings</h6>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-body">
                 <h5 class="card-subtitle mb-2 text-muted">To Do</h5>
                 <h6 class="card-subtitle mb-2 text-muted">ClientIslands.cshtm: Remove hard coded climtate types</h6>
                 <p class="card-text">Get the names of the climate types via an api call direclty via the enum</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-subtitle mb-2 text-muted">To Do</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Add cookiepolicy</h6>
+                <p class="card-text">Add consent cookie</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-subtitle mb-2 text-muted">To Do</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Environment variables</h6>
+                <p class="card-text">Use environment variables to store passwords etc.</p>
             </div>
         </div>
 

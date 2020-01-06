@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Aruba.Data;
+using Aruba.CustomMiddleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace Aruba
 {
@@ -55,6 +57,7 @@ namespace Aruba
             app.UseStaticFiles();
             app.UseNodeModules();
 
+            app.UseSecurityMiddleware();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -66,5 +69,21 @@ namespace Aruba
             });
 
         }
+
+        public RequestDelegate WelcomeToGreenland(RequestDelegate next)
+        {
+            return async ctx =>
+            {
+                if (ctx.Request.Path.StartsWithSegments("/Green"))
+                {
+                    await ctx.Response.WriteAsync("Welcome to Greenland; you were intercepted by custom middleware");
+                }
+                else
+                {
+                    await next(ctx);
+                }
+            };
+        }
+
     }
 }

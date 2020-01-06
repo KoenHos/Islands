@@ -12,7 +12,7 @@
             <input type="search" class="form-control" asp-for="SearchTerm" />
             <span class="input-group-btn">
                 <button class="btn btn-primary">
-                    <i class="fas fa-search">
+                    <i>
                         Search
                     </i>
                 </button>
@@ -21,10 +21,12 @@
     </div>
 </form>
 
-@foreach (var island in Model.Islands)
-{
-    <partial name="_Summary" model="island" />
-}
+<div class="card-columns">
+    @foreach (var island in Model.Islands)
+    {
+        <partial name="_Summary" model="island" />
+    }
+</div>
 
 <a asp-page="./Edit" class="btn btn-primary">Add new</a>
 

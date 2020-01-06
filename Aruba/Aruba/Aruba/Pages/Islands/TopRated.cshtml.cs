@@ -7,28 +7,34 @@ using Aruba.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace Aruba.Pages.Islands
 {
     public class TopRatedModel : PageModel
     {
+        private IConfiguration configuration;
+        private IIslandDataService islandData;
+        private ILogger<TopRatedModel> logger;
+
         public string Message { get; set; }
         public IEnumerable<Island> Islands { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
-        private IConfiguration configuration;
-        private IIslandDataService islandData;
-
-        public TopRatedModel(IConfiguration configuration, IIslandDataService islandData)
+        public TopRatedModel(IConfiguration configuration,
+            IIslandDataService islandData,
+            ILogger<TopRatedModel> logger) 
         {
             this.configuration = configuration;
             this.islandData = islandData;
+            this.logger = logger;
         }
 
         public void OnGet()
         {
+            logger.LogWarning("executing Get all islands from TopRatedModel");
             Message = configuration["Message"];
             Islands = islandData.GetByName(SearchTerm);
         }

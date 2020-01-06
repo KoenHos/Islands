@@ -12,14 +12,14 @@ namespace Aruba.Pages.Islands
 {
     public class TopRatedCardModel : PageModel
     {
+        private IConfiguration configuration;
+        private IIslandDataService islandData;
+
         public string Message { get; set; }
         public IEnumerable<Island> Islands { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
-
-        private IConfiguration configuration;
-        private IIslandDataService islandData;
 
         public TopRatedCardModel(IConfiguration configuration, IIslandDataService islandData)
         {
