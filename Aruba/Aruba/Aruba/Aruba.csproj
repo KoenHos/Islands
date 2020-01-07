@@ -3,6 +3,9 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
     </PropertyGroup>
+    <Target Name="PostBuild" AfterTargets="ComputeFilesToPublish">
+        <Exec Command="npm install" />
+    </Target>
     <ItemGroup>
         <Content Include="node_modules/**" CopyToPublishDirectory="PreserveNewest" />
     </ItemGroup>
@@ -37,23 +40,29 @@
         <None Include="**/*" />
     </ItemGroup>
     <ItemGroup>
-      <None Remove="obj\Debug\netcoreapp3.0\Aruba.Views.dll" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\Detail.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Index.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\Edit.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\Components\IslandCount\Default.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_Layout.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LayoutDelete.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\_ViewStart.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Error.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\ClientIslands.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\NotFound.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\TopRated.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\Components\IslandCount\Default.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LayoutDelete.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_Layout.cshtml.g.cs" />
-      <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\_ViewStart.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Aruba.Views.dll" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\Detail.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Index.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\Edit.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\Components\IslandCount\Default.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_Layout.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LayoutDelete.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\_ViewStart.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Error.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\ClientIslands.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\NotFound.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\TopRated.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\Components\IslandCount\Default.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LayoutDelete.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_Layout.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\_ViewStart.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Error.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Index.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\_ViewStart.cshtml.g.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Remove="wwwroot\images\Bootstrap4.jpg" />
     </ItemGroup>
 </Project>
