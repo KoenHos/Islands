@@ -30,13 +30,20 @@ namespace Aruba
             services.AddDbContextPool<IslandDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("IslandsDb2"));
-             });
+            });
+
+            // services.AddSingleton<>(); Add one instance for the entire application
+            // services.AddTransient<>(); Return a new instance evertime one is needed/being ask for
+            // services.AddScoped<>(); One instance per request (good for data access)
 
             //services.AddSingleton<IIslandData, InMemoryIslandData>();
             services.AddScoped<IIslandDataService, SqlIslandDataService>();
+            services.AddScoped<IHolidayCategoryDataService, InMemoryHolidayCategoryDataService>();
+            services.AddScoped<IHolidayPackageDataService, InMemoryHolidayPackageDataService>();
 
             services.AddRazorPages();
             services.AddControllers();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,7 +72,11 @@ namespace Aruba
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                endpoints.MapControllers();
+                // endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
             });
 
         }

@@ -1,0 +1,33 @@
+﻿@model HolidayPackageViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "List";
+}
+
+<h1>Categories</h1>
+<ul>
+    @foreach (var category in Model.HolidayCategories)
+    {
+        <li>@category.Description</li>
+    }
+</ul>
+
+<div class="card-columns">
+    @foreach (var package in Model.HolidayPackages)
+    {
+        <div class="card">
+            <div class="card-header">
+                <h3>@package.Name</h3>
+            </div>
+            <div class="card-body">
+                <h4>@package.LongDescription</h4>
+            </div>
+            <div class="card-footer">
+                <span><strong>Medical precautions</strong> @package.MedicalPrecautions</span>
+            </div>
+        </div>
+    }
+</div>
+
+
+
