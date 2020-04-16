@@ -9,12 +9,14 @@ while True:
         if (num % i) == 0:
             print(num,"dit is geen priemgetal")
             print(i,"X",num//i,"=",num)
+            break
 
 
     else:
         print(num,"is een priemgetal")
         time.sleep(5)
         os.system('cls')
+        
 
 
 
