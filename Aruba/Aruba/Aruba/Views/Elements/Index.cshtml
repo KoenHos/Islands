@@ -1,0 +1,31 @@
+﻿@model ElementsViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Elements";
+}
+
+<h1>Types</h1>
+<ul>
+    @foreach (var element in Model.Elements)
+    {
+        <li>@element.Type</li>
+    }
+</ul>
+
+<div class="card-columns">
+    @foreach (var element in Model.Elements)
+    {
+        <div class="card">
+            <div class="card-header">
+                <h3>@element.Name</h3>
+            </div>
+            <div class="card-body">
+                <h4>@element.Price</h4>
+                <h4>@element.Description</h4>
+            </div>
+            <div class="card-footer">
+                <span><strong>Category</strong> @element.Type</span>
+            </div>
+        </div>
+    }
+</div>

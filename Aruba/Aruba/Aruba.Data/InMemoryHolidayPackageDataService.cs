@@ -38,9 +38,9 @@ namespace Aruba.Data
 
         public IEnumerable<HolidayPackage> HolidayPackagesOfTheWeek => AllHolidayPackages.Where(c => c.IsPackeOfTheWeek == true);
 
-        public HolidayPackage GetHolidayPackageById(int HolidayPackageId)
+        public HolidayPackage GetHolidayPackageById(int holidayPackageId)
         {
-            return AllHolidayPackages.FirstOrDefault(p => p.Id == HolidayPackageId);
+            return AllHolidayPackages.FirstOrDefault(p => p.Id == holidayPackageId);
         }
 
     }

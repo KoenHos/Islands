@@ -38,8 +38,11 @@ namespace Aruba
 
             //services.AddSingleton<IIslandData, InMemoryIslandData>();
             services.AddScoped<IIslandDataService, SqlIslandDataService>();
+
             services.AddScoped<IHolidayCategoryDataService, InMemoryHolidayCategoryDataService>();
             services.AddScoped<IHolidayPackageDataService, InMemoryHolidayPackageDataService>();
+            //services.AddScoped<IHolidayCategoryDataService, SqlHolidayCategoryDataService>();
+           // services.AddScoped<IHolidayPackageDataService, SqlHolidayPackageDataService>();
 
             services.AddRazorPages();
             services.AddControllers();

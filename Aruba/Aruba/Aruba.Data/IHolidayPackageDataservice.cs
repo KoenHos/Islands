@@ -8,6 +8,6 @@ namespace Aruba.Data
     {
         IEnumerable<HolidayPackage> AllHolidayPackages { get; }
         IEnumerable<HolidayPackage> HolidayPackagesOfTheWeek { get; }
-        HolidayPackage GetHolidayPackageById(int HolidayPackageId);
+        HolidayPackage GetHolidayPackageById(int holidayPackageId);
     }
 }

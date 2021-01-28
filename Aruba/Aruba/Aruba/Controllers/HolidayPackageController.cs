@@ -24,6 +24,7 @@ namespace Aruba.Controllers
                 HolidayPackages = holidayPackageDataService.AllHolidayPackages,
                 HolidayCategories = holidayCategoryDataService.AllHolidayCategories
             };
+
             return  View(viewModel);
         }
     }
