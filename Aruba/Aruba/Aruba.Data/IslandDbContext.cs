@@ -9,12 +9,15 @@ namespace Aruba.Data
 {
     public class IslandDbContext : DbContext
     {
-        public DbSet<Island> Islands { get; set; }
-
         public IslandDbContext(DbContextOptions<IslandDbContext> options) : base(options)
         {
 
-        }
+        } 
+
+        public DbSet<Island> Islands { get; set; }
+        public DbSet<HolidayCategory> HolidayCategories { get; set; }
+        public DbSet<HolidayPackage> HolidayPackages { get; set; }
+
     }
 
 }

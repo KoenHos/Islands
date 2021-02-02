@@ -39,7 +39,7 @@
             var climateTypes = ["Unknown", "Tropical", "Dry", "Temperate", "Continental", "Polar", "Alpine"]
 
             $.ajax("/api/islands/",
-                { mthod: "get" })
+                { method: "get" })
                 .then(function (response) {
                     console.dir(response);
                     $("#islands").dataTable({

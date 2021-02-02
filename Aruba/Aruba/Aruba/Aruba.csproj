@@ -17,6 +17,12 @@
         <Folder Include="wwwroot\images\" />
         <Folder Include="Api\" />
         <Folder Include="CustomMiddleware\" />
+        <Folder Include="Models\" />
+        <Folder Include="Controllers\" />
+        <Folder Include="Views\" />
+        <Folder Include="Views\HolidayPackage\" />
+        <Folder Include="Views\Elements\" />
+        <Folder Include="Services\" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Aruba.Data\Aruba.Data.csproj">
@@ -61,8 +67,46 @@
         <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Error.cshtml.g.cs" />
         <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Index.cshtml.g.cs" />
         <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\_ViewStart.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Error.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_Layout.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\Components\IslandCount\Default.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LayoutDelete.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\_ViewStart.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Index.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\Components\IslandCount\Default.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_Layout.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LayoutDelete.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\_ViewImports.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\_ViewStart.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Index.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\NotFound.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\Components\IslandCount\Default.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_Layout.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Shared\_LayoutDelete.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\_ViewStart.cshtml.g.cs" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="Pages\_ViewStart.cshtml" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Views\_ViewImports.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Views\HolidayPackage\List.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Privacy.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\_Summary.cshtml.g.cs" />
+        <None Remove="obj\Debug\netcoreapp3.0\Razor\Pages\Islands\TopRatedCard.cshtml.g.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Remove="wwwroot\images\Bootstrap4.jpg" />
+      <Content Remove="Views\Shared\_Layout.cshtml" />
     </ItemGroup>
 </Project>
