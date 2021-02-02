@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Aruba.Core;
+using static Aruba.Core.ElementTypes;
 
 namespace Aruba.Models
 {

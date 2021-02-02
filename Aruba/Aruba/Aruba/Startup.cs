@@ -45,7 +45,9 @@ namespace Aruba
             services.AddScoped<IHolidayCategoryDataService, InMemoryHolidayCategoryDataService>();
             services.AddScoped<IHolidayPackageDataService, InMemoryHolidayPackageDataService>();
             //services.AddScoped<IHolidayCategoryDataService, SqlHolidayCategoryDataService>();
-           // services.AddScoped<IHolidayPackageDataService, SqlHolidayPackageDataService>();
+            // services.AddScoped<IHolidayPackageDataService, SqlHolidayPackageDataService>();
+
+            services.AddScoped<IElementDataService, SqlElementDataService>();
 
             services.AddRazorPages();
             services.AddControllers();

@@ -1,4 +1,5 @@
 ﻿using System;
+using Aruba.Data;
 using Microsoft.Extensions.Logging;
 
 namespace Aruba.Services

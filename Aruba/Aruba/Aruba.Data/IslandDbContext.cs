@@ -1,5 +1,4 @@
-﻿using System;
-using Aruba.Core;
+﻿using Aruba.Core;
 using Microsoft.EntityFrameworkCore;
 
 // https://database.guide/how-to-install-sql-server-on-a-mac/
@@ -18,6 +17,7 @@ namespace Aruba.Data
         public DbSet<HolidayCategory> HolidayCategories { get; set; }
         public DbSet<HolidayPackage> HolidayPackages { get; set; }
 
+        public DbSet<Element> Elements { get; set; }
     }
 
 }
