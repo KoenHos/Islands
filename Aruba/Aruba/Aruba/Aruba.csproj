@@ -22,6 +22,7 @@
         <Folder Include="Views\" />
         <Folder Include="Views\HolidayPackage\" />
         <Folder Include="Views\Elements\" />
+        <Folder Include="Services\" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Aruba.Data\Aruba.Data.csproj">

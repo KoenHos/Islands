@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Http;
+using Aruba.Services;
 
 namespace Aruba
 {
@@ -31,6 +32,8 @@ namespace Aruba
             {
                 options.UseSqlServer(Configuration.GetConnectionString("IslandsDb2"));
             });
+
+            services.AddTransient<IMailService, DummyMailService>();
 
             // services.AddSingleton<>(); Add one instance for the entire application
             // services.AddTransient<>(); Return a new instance evertime one is needed/being ask for
