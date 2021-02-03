@@ -36,6 +36,12 @@ namespace Aruba.Data
             return element;
         }
 
+        public void Truncate()
+        {
+            var elements = GetByName("");
+            db.Elements.RemoveRange(elements);
+        }
+
         public Element GetById(int id)
         {
             return db.Elements.Find(id);

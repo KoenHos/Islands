@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Aruba.Core;
 using Aruba.Services;
 using Aruba.Data;
+using System.Linq;
 
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -26,7 +27,7 @@ namespace Aruba.Controllers
         [HttpGet("GeologyElements")]
         public IActionResult Index()
         {
-            IEnumerable<Element> _elements = GetElements();
+            IEnumerable<Element> _elements = GetElements().OrderBy(e => e.AtomicNumber);
 
 
             var viewModel = new ElementsViewModel()
@@ -66,6 +67,22 @@ namespace Aruba.Controllers
 
 
             return View(viewModel);
+        }
+
+        public IActionResult Reset()
+        {
+            _elementDataService.Truncate();
+            _elementDataService.Commit();
+
+            IEnumerable<Element> _elements = GetElements().OrderBy(e => e.AtomicNumber);
+
+
+            var viewModel = new ElementsViewModel()
+            {
+                Elements = _elements
+            };
+
+            return View("Index", viewModel);
         }
 
         private  IEnumerable<Element> GetElements()

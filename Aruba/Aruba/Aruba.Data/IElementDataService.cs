@@ -11,6 +11,7 @@ namespace Aruba.Data
             Element Update(Element element);
             Element Add(Element element);
             Element Delete(int id);
+            void Truncate();
             int GetCountOfIElements();
             int Commit();
 

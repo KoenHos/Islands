@@ -34,6 +34,7 @@ namespace Aruba
             });
 
             services.AddTransient<IMailService, DummyMailService>();
+            services.AddTransient<ElementSeeder>();
 
             // services.AddSingleton<>(); Add one instance for the entire application
             // services.AddTransient<>(); Return a new instance evertime one is needed/being ask for
