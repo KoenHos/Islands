@@ -4,7 +4,6 @@ using Aruba.Models;
 using System.Collections.Generic;
 using Aruba.Core;
 using Aruba.Services;
-using static Aruba.Core.ElementTypes;
 using Aruba.Data;
 
 
@@ -48,7 +47,9 @@ namespace Aruba.Controllers
                     Name = model.Name,
                     Description = model.Description,
                     Price=model.Price,
-                    Type= model.Type
+                    Type= model.Type,
+                    Symbol = model.Symbol,
+                    AtomicNumber = model.AtomicNumber
                 });
                 _elementDataService.Commit();
                 _mailService.SendMessage("koenhos@hotmail.com", model.Name, $"Element added: {model.Description}");
