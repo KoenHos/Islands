@@ -1,3 +1,202 @@
-﻿{
-  element {"name":  }
-}
+﻿[
+  {
+    "Name": "Waterstof",
+    "AtomicNumber": 1,
+    "Symbol": "H",
+    "Description": "Waterstof is een chemisch element met symbool H (La: Hydrogenium) en atoomnummer 1. Het element komt als zodanig niet in geïsoleerde vorm voor in normale omstandigheden, maar vormt door de hoge reactiviteit verbindingen. Onder atmosferische omstandigheden vormt waterstof een twee-atomig molecuul: diwaterstof, dat meestal gewoon als waterstof of waterstofgas aangeduid wordt. Waterstof is het meest voorkomende element in het universum. Het normale isotoop van waterstof protium bestaat maar uit één proton en één elektron en bevat dus geen neutronen.",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "Helium",
+    "AtomicNumber": 2,
+    "Symbol": "He",
+    "Description": "Helium is een scheikundig element met symbool He en atoomnummer 2. Het is een kleurloos edelgas.",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "Lithium",
+    "AtomicNumber": 3,
+    "Symbol": "Li",
+    "Description": "Lithium is een scheikundig element met symbool Li en atoomnummer 3. Het is een zilverwit alkalimetaal.",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "Beryllium",
+    "AtomicNumber": 4,
+    "Symbol": "Be",
+    "Description": "Beryllium is een scheikundig element met symbool Be en atoomnummer 4. Het is een donkergrijs aardalkalimetaal.",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "Boor",
+    "AtomicNumber": 5,
+    "Symbol": "B",
+    "Description": "Boor of borium is een scheikundig element met symbool B en atoomnummer 5 (niet te verwarren met bohrium met symbool Bh). Het is een zwart metalloïde.",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "Koolstof",
+    "AtomicNumber": 6,
+    "Symbol": "C",
+    "Description": "Koolstof (<Latijn: carbonium) is een scheikundig element met symbool C en atoomnummer 6. Het is een niet-metaal dat in verschillende vormen, allotropen, voorkomt. In de natuur komen de allotropen diamant, grafiet, amorfe koolstof en het zeldzame lonsdaleïet voor. Fullerenen zijn synthetische vormen van koolstof.",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "Stikstof",
+    "AtomicNumber": 7,
+    "Symbol": "N",
+    "Description": "Stikstof is een scheikundig element met symbool N en atoomnummer 7. Stikstof is een niet-metaal uit de stikstofgroep (groep 15). Losse atomen van dit element zijn zeer reactief en verbinden zich direct met andere stikstofatomen. Hierbij wordt meestal distikstof gevormd (N2 of moleculaire stikstof), wat de gangbare verschijningsvorm van stikstof is. Op kamertemperatuur verkeert N2 in gasvorm. Lucht bestaat grotendeels uit distikstof (stikstofgas), en verder voornamelijk uit dizuurstof (zuurstofgas) . De term stikstof komt voort uit het gevaar van een nog hogere concentratie van distikstof, zodat er te weinig dizuurstof is, waardoor men kan stikken.[1] In de context van milieuvervuiling worden met \"stikstof\" voornamelijk ammoniak en stikstofoxiden bedoeld.[2]De Latijnse naam voor stikstof is nitrogenium, de Grieken noemen het nitron. Losse atomen stikstof worden ook wel in statu nascendi genoemd.",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "Zuurstog",
+    "AtomicNumber": 8,
+    "Symbol": "O",
+    "Description": "Zuurstof is een chemisch element met symbool O (Uit het Latijn: oxygenium) en atoomnummer 8. Het is een niet-metaal dat tot de zuurstofgroep (groep VIa of groep 16) in het periodiek systeem behoort. Zuurstof komt als enkelvoudige stof vooral als dizuurstof (O2) in de atmosfeer voor. In samengestelde vorm is het eveneens een wijdverspreid element omdat alle water van de oceanen en alle silicaten waar de aardkorst uit bestaat zuurstof bevatten. Gemeten naar massa is zuurstof veruit het meest voorkomende element in het menselijk lichaam: dat bestaat voor ongeveer 65% uit zuurstof (voornamelijk als bouwsteen van water).[1] Als gas is zuurstof kleurloos, geurloos en smaakloos. Als vloeistof is het lichtblauw van kleur.[2]",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "Fluor",
+    "AtomicNumber": 9,
+    "Symbol": "F",
+    "Description": "Fluor is een chemisch element met symbool F en atoomnummer 9. Het behoort tot de groep van de halogenen (groep VIIa). Het element komt in monoatomische vorm niet voor in de natuur. Het vormt diatomische moleculen difluor (F2), die wegens de hoge reactiviteit zelf ook nauwelijks in de natuur te vinden zijn. Het element komt dus in de natuur vrijwel alleen in samengestelde stoffen voor.",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "Neon",
+    "AtomicNumber": 10,
+    "Symbol": "Ne",
+    "Description": "Neon is een chemisch element met symbool Ne en atoomnummer 10. Het is een kleurloos edelgas.",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 11,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 12,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 13,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 14,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 15,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 16,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 17,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 18,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 19,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 20,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 21,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 22,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 23,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 24,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  },
+  {
+    "Name": "",
+    "AtomicNumber": 25,
+    "Symbol": "",
+    "Description": "",
+    "Price": "0",
+    "Type":"0"
+  }
+]

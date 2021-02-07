@@ -16,11 +16,13 @@ namespace Aruba.Controllers
     {
         private readonly IMailService _mailService;
         private readonly IElementDataService _elementDataService;
+        private readonly IElementSeeder _elementSeeder;
 
-        public ElementsController(IMailService mailService, IElementDataService elementDataService)
+        public ElementsController(IMailService mailService, IElementDataService elementDataService, IElementSeeder elementSeeder)
         {
             _mailService = mailService;
             _elementDataService = elementDataService;
+            _elementSeeder = elementSeeder;
         }
 
 
@@ -73,6 +75,7 @@ namespace Aruba.Controllers
         {
             _elementDataService.Truncate();
             _elementDataService.Commit();
+            _elementSeeder.Seed();
 
             IEnumerable<Element> _elements = GetElements().OrderBy(e => e.AtomicNumber);
 
@@ -88,31 +91,6 @@ namespace Aruba.Controllers
         private  IEnumerable<Element> GetElements()
         {
             return _elementDataService.GetByName("");
-
-
-            //return new List<Element>
-            //{
-            //    new Element { Name="Gold",
-            //                  Price="1800",
-            //                  Description="Gold is one of the most valuable elements in the world",
-            //                  Type = ElementType.TransitionMetal
-            //                },
-            //    new Element { Name="Lithium",
-            //                  Price="112",
-            //                  Description="Source of batteryingredients",
-            //                  Type = ElementType.AlkaliMetal
-            //                },
-            //    new Element { Name="Samarium",
-            //                  Price="unknown",
-            //                  Description="tnot yet available",
-            //                  Type = ElementType.Lanthanide
-            //                },
-            //    new Element { Name="Silicium",
-            //                  Price="0,1",
-            //                  Description="one of the most common elements on teh continental crust" ,
-            //                  Type = ElementType.Metaloid
-            //                },
-            //};
         }
 
         public IActionResult UnKnownAction()

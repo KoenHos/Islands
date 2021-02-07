@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace Aruba.Data
 {
-    public class ElementSeeder
+    public class ElementSeeder : IElementSeeder
     {
         private readonly IslandDbContext _islandDbContext;
         private readonly IHostingEnvironment _hostingEnvironment;
@@ -26,8 +26,8 @@ namespace Aruba.Data
             if (! _islandDbContext.Elements.Any())
             {
                 //seed
-                var file = Path.Combine(_hostingEnvironment.ContentRootPath, "Aruba.Data/elements.json");
-                var json = File.ReadAllText(file);
+                var file = Path.Combine(_hostingEnvironment.ContentRootPath, "../Aruba.Data/Elements.json");
+                var json = File.ReadAllText("../Aruba.Data/Elements.json");
                 var elements = JsonConvert.DeserializeObject<IEnumerable<Element>>(json);
                 _islandDbContext.Elements.AddRange(elements);
                 _islandDbContext.SaveChanges();

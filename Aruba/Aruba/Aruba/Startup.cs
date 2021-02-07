@@ -49,6 +49,7 @@ namespace Aruba
             // services.AddScoped<IHolidayPackageDataService, SqlHolidayPackageDataService>();
 
             services.AddScoped<IElementDataService, SqlElementDataService>();
+            services.AddScoped<IElementSeeder, ElementSeeder>();
 
             services.AddRazorPages();
             services.AddControllers();
