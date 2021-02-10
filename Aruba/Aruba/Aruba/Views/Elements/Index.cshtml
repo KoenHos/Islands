@@ -12,7 +12,7 @@
 @Html.ActionLink("Reset", "Reset", "Elements")
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-9">
         @*<h1>Types</h1>
         <ul>
             @foreach (var element in Model.Elements)
@@ -41,7 +41,7 @@
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-3">
         @{await Html.RenderPartialAsync("_AddElement", new ElementViewModel()); }
     </div>
 </div>

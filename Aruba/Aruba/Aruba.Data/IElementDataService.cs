@@ -13,7 +13,7 @@ namespace Aruba.Data
             Element Delete(int id);
             void Truncate();
             int GetCountOfIElements();
-            int Commit();
+            bool Commit();
 
     }
 }

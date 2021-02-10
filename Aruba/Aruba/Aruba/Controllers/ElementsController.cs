@@ -54,7 +54,7 @@ namespace Aruba.Controllers
                     Symbol = model.Symbol,
                     AtomicNumber = model.AtomicNumber
                 });
-                _elementDataService.Commit();
+                var succes = _elementDataService.Commit();
                 _mailService.SendMessage("koenhos@hotmail.com", model.Name, $"Element added: {model.Description}");
                 ViewBag.UserMessage = $"Mail sent for new element: {model.Name} with price: {model.Price} and decription: {model.Description}";
                 ModelState.Clear();
