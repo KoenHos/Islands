@@ -20,11 +20,20 @@ namespace Aruba.Data
 
         public Element Add(Element element)
         {
-            _logger.LogInformation($"Add element: {element.Name}");
-            _db.Elements.Add(element);
+            try
+            {
+                _logger.LogInformation($"Add element: {element.Name}");
+                _db.Elements.Add(element);               
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to add element: {element.Name} - {ex}");
+            };
             return element;
+
         }
 
+        //Todo Add try catch
         public bool Commit()
         {
             _logger.LogInformation($"Commit - Save all changes");
@@ -35,16 +44,26 @@ namespace Aruba.Data
 
         public Element Delete(int id)
         {
-            var element = GetById(id);
-
-            if (element != null)
+            try
             {
-                _logger.LogInformation($"Delete element: {element.Name}");
-                _db.Elements.Remove(element);
+                var element = GetById(id);
+
+                if (element != null)
+                {
+                    _logger.LogInformation($"Delete element: {element.Name}");
+                    _db.Elements.Remove(element);
+                }
+                return element;
             }
-            return element;
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to delete element with id: {id} - {ex}");
+            };
+            return null;
         }
 
+
+        //Todo Add try catch
         public void Truncate()
         {
             _logger.LogInformation($"Truncate elements tabe");
@@ -53,11 +72,13 @@ namespace Aruba.Data
             _db.Elements.RemoveRange(elements);
         }
 
+        //Todo Add try catch
         public Element GetById(int id)
         {
             return _db.Elements.Find(id);
         }
 
+        //Todo Add try catch
         public IEnumerable<Element> GetByName(string name)
         {
             var query = from i in _db.Elements
@@ -68,6 +89,7 @@ namespace Aruba.Data
             return query.OrderBy( i => i.Name);
         }
 
+        //Todo Add try catch
         public int GetCountOfIElements()
         {
             return _db.Elements.Count();
@@ -75,10 +97,18 @@ namespace Aruba.Data
 
         public Element Update(Element element)
         {
-            _logger.LogInformation($"Update element: {element.Name}");
+            try
+            {
+                _logger.LogInformation($"Update element: {element.Name}");
 
-            var entity = _db.Elements.Attach(element);
-            entity.State = EntityState.Modified;
+                var entity = _db.Elements.Attach(element);
+                entity.State = EntityState.Modified;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to update element: {element.Name} - {ex}");
+            };
+
             return element;
         }
     }
