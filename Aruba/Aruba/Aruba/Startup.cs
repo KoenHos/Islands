@@ -34,6 +34,7 @@ namespace Aruba
             });
 
             services.AddTransient<IMailService, DummyMailService>();
+            services.AddTransient<ElementSeeder>();
 
             // services.AddSingleton<>(); Add one instance for the entire application
             // services.AddTransient<>(); Return a new instance evertime one is needed/being ask for
@@ -45,7 +46,10 @@ namespace Aruba
             services.AddScoped<IHolidayCategoryDataService, InMemoryHolidayCategoryDataService>();
             services.AddScoped<IHolidayPackageDataService, InMemoryHolidayPackageDataService>();
             //services.AddScoped<IHolidayCategoryDataService, SqlHolidayCategoryDataService>();
-           // services.AddScoped<IHolidayPackageDataService, SqlHolidayPackageDataService>();
+            // services.AddScoped<IHolidayPackageDataService, SqlHolidayPackageDataService>();
+
+            services.AddScoped<IElementDataService, SqlElementDataService>();
+            services.AddScoped<IElementSeeder, ElementSeeder>();
 
             services.AddRazorPages();
             services.AddControllers();

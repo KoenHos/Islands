@@ -9,36 +9,39 @@
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 }
 
+@Html.ActionLink("Reset", "Reset", "Elements")
+
 <div class="row">
-    <div class="col-md-6">
-        <h1>Types</h1>
+    <div class="col-md-9">
+        @*<h1>Types</h1>
         <ul>
             @foreach (var element in Model.Elements)
             {
                 <li>@element.Type</li>
             }
-        </ul>
+        </ul>*@
 
         <div class="card-columns">
             @foreach (var element in Model.Elements)
             {
-                <div class="card">
+                <div class="card text-center">
                     <div class="card-header">
-                        <h3>@element.Name</h3>
+                        <p><strong>@element.AtomicNumber </strong> @element.Name</p>
                     </div>
                     <div class="card-body">
-                        <h4>@element.Price</h4>
-                        <h4>@element.Description</h4>
+                        @*<p>Price: @element.Price</p>
+                         <p>@element.Description</p>*@
+                        <h3>@element.Symbol</h3>
                     </div>
                     <div class="card-footer">
-                        <span><strong>Category</strong> @element.Type</span>
+                        <span>@element.Type</span>
                     </div>
                 </div>
             }
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-3">
         @{await Html.RenderPartialAsync("_AddElement", new ElementViewModel()); }
     </div>
 </div>
