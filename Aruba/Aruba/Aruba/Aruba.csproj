@@ -23,6 +23,7 @@
         <Folder Include="Views\HolidayPackage\" />
         <Folder Include="Views\Elements\" />
         <Folder Include="Services\" />
+        <Folder Include="Mapping\" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Aruba.Data\Aruba.Data.csproj">
@@ -45,6 +46,7 @@
         <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.2" />
         <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
         <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     </ItemGroup>
     <ItemGroup>
         <None Include="**/*" />
