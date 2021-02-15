@@ -11,7 +11,10 @@ namespace Aruba.Mapping
         {
             CreateMap<Element, ElementViewModel>()
                 .ForMember(e => e.ElementId, ex => ex.MapFrom(e => e.Id))
-                .ReverseMap(); 
+                .ReverseMap();
+
+            CreateMap<ElementOccurrence, ElementOccurrenceViewModel>()
+                .ReverseMap();
         }
     }
 }

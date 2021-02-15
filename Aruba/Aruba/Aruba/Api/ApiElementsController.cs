@@ -76,7 +76,7 @@ namespace Aruba.Api
                     //    Price = elementViewModel.Price,
                     //    Type = elementViewModel.Type
                     //};
-                    var element = _mapper.Map<ElementViewModel, Element>(model);
+                    Element element = _mapper.Map<ElementViewModel, Element>(model);
 
                     _elementDataService.Add(element);
                     if (_elementDataService.Commit())

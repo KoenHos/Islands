@@ -18,7 +18,7 @@ namespace Aruba.Data
         public DbSet<HolidayPackage> HolidayPackages { get; set; }
 
         public DbSet<Element> Elements { get; set; }
-
+        public DbSet<ElementOccurrence> ElementOccurrences { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,7 +27,7 @@ namespace Aruba.Data
                 entity.HasIndex(p => new { p.Name });
 
                 entity.Property(p => p.Symbol).HasMaxLength(2);
-                entity.Property(p => p.Description).HasColumnType("varchar 1024");
+                //entity.Property(p => p.Description).HasColumnType("varchar 1024");
 
                 //entity.Property(p => p.Price).IsRequired();
                 //entity.Property(p => p.AtomicNumber).IsRequired();

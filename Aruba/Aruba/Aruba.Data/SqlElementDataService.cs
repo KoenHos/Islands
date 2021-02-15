@@ -111,5 +111,29 @@ namespace Aruba.Data
 
             return element;
         }
+
+
+        // ElementOccurences --> Move to separate class? ==============================================
+
+        public ElementOccurrence Add(ElementOccurrence elementOccurrence)
+        {
+            try
+            {
+                _logger.LogInformation($"Add element: {elementOccurrence.Name}");
+                _db.ElementOccurrences.Add(elementOccurrence);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to add element: {elementOccurrence.Name} - {ex}");
+            };
+            return elementOccurrence;
+        }
+
+        //Todo Add try catch
+        public IEnumerable<ElementOccurrence> GetOccurrenceByElementId(int id)
+        {
+            return _db.ElementOccurrences.Where(e => e.Element == _db.Elements.Find(id));
+        }
+
     }
 }

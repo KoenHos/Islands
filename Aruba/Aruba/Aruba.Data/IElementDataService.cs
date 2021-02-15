@@ -15,5 +15,7 @@ namespace Aruba.Data
             int GetCountOfIElements();
             bool Commit();
 
+        IEnumerable<ElementOccurrence> GetOccurrenceByElementId(int id);
+        ElementOccurrence Add(ElementOccurrence elementOccurrence);
     }
 }

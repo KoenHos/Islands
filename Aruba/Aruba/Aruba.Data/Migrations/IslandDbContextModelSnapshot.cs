@@ -30,19 +30,15 @@ namespace Aruba.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("varchar 1024");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Price")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Symbol")
-                        .IsRequired()
                         .HasColumnType("nvarchar(2)")
                         .HasMaxLength(2);
 
@@ -54,6 +50,32 @@ namespace Aruba.Data.Migrations
                     b.HasIndex("Name");
 
                     b.ToTable("Elements");
+                });
+
+            modelBuilder.Entity("Aruba.Core.ElementOccurrence", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ElementId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ElementId");
+
+                    b.ToTable("ElementOccurrences");
                 });
 
             modelBuilder.Entity("Aruba.Core.HolidayCategory", b =>
@@ -142,6 +164,13 @@ namespace Aruba.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Islands");
+                });
+
+            modelBuilder.Entity("Aruba.Core.ElementOccurrence", b =>
+                {
+                    b.HasOne("Aruba.Core.Element", "Element")
+                        .WithMany()
+                        .HasForeignKey("ElementId");
                 });
 
             modelBuilder.Entity("Aruba.Core.HolidayPackage", b =>
