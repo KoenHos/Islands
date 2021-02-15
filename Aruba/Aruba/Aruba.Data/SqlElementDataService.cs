@@ -18,6 +18,7 @@ namespace Aruba.Data
             this._logger = logger;
         }
 
+
         public Element Add(Element element)
         {
             try
@@ -79,11 +80,13 @@ namespace Aruba.Data
         }
 
         //Todo Add try catch
-        public IEnumerable<Element> GetByName(string name)
+        public IEnumerable<Element> GetByName(string name, bool heavierThanOxygen = false)
         {
             var query = from i in _db.Elements
 #pragma warning disable RECS0063 // Warns when a culture-aware 'StartsWith' call is used by default.
-                        where i.Name.StartsWith(name) || string.IsNullOrEmpty(name)
+                        where (i.Name.StartsWith(name) || string.IsNullOrEmpty(name)) &&
+                              ( i.AtomicNumber > 16 || heavierThanOxygen == false)
+                        
 #pragma warning restore RECS0063 // Warns when a culture-aware 'StartsWith' call is used by default.
                         select i;
             return query.OrderBy( i => i.Name);

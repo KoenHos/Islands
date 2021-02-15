@@ -27,7 +27,7 @@ namespace Aruba.Controllers
 
 
         [HttpGet("GeologyElements")]
-        public IActionResult Index()
+        public IActionResult Index(bool heavierThanOxygen )
         {
             IEnumerable<Element> _elements = GetElements().OrderBy(e => e.AtomicNumber);
 
@@ -88,9 +88,9 @@ namespace Aruba.Controllers
             return View("Index", viewModel);
         }
 
-        private  IEnumerable<Element> GetElements()
+        private  IEnumerable<Element> GetElements(bool heavierThanOxygen = false)
         {
-            return _elementDataService.GetByName("");
+            return _elementDataService.GetByName("", heavierThanOxygen);
         }
 
         public IActionResult UnKnownAction()
