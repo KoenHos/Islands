@@ -29,11 +29,11 @@ namespace Aruba.Api
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        public ActionResult<IEnumerable<Element>> Get()
+        public ActionResult<IEnumerable<Element>> Get(bool includeHeavierThanOxygen = false)
         {
             try
             {
-                return Ok(_mapper.Map<IEnumerable<Element>, IEnumerable<ElementViewModel>>(_elementDataService.GetByName("")));
+                return Ok(_mapper.Map<IEnumerable<Element>, IEnumerable<ElementViewModel>>(_elementDataService.GetByName("", includeHeavierThanOxygen)));
             }
             catch (Exception ex)
             {
