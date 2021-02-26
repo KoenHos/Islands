@@ -6,12 +6,14 @@ using Aruba.Core;
 using Aruba.Services;
 using Aruba.Data;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Aruba.Controllers
 {
+    [Authorize]
     public class ElementsController : Controller
     {
         private readonly IMailService _mailService;
