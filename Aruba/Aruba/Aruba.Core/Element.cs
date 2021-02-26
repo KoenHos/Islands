@@ -11,5 +11,6 @@ namespace Aruba.Core
         public string Description { get; set; }
         public string Price { get; set; }
         public ElementType Type { get; set; }
+        public StoreUser User { get; set; }
     }
 }

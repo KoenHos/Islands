@@ -68,6 +68,8 @@ namespace Aruba.Data
         {
             _logger.LogInformation($"Truncate elements tabe");
 
+            TruncateOccurence();  //ToDO: refactor this
+
             var elements = GetByName("");
             _db.Elements.RemoveRange(elements);
         }
@@ -133,6 +135,25 @@ namespace Aruba.Data
         public IEnumerable<ElementOccurrence> GetOccurrenceByElementId(int id)
         {
             return _db.ElementOccurrences.Where(e => e.Element == _db.Elements.Find(id));
+        }
+
+        //Todo Add try catch
+        public bool TruncateOccurence()
+        {
+            _logger.LogInformation($"Truncate elements tabe");
+
+            var occurences = _db.ElementOccurrences.Where(e => !string.IsNullOrEmpty(e.Description));
+
+            try
+            {
+                _db.ElementOccurrences.RemoveRange(occurences);
+                _db.SaveChanges();
+            }
+            catch
+            {
+
+            }
+            return true;
         }
 
     }

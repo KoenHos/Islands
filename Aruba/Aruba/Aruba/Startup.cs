@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.Http;
 using Aruba.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
+using Aruba.Core;
+using Microsoft.AspNetCore.Identity;
 
 namespace Aruba
 {
@@ -30,6 +32,12 @@ namespace Aruba
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<StoreUser, IdentityRole>(cfg =>
+            {
+                cfg.User.RequireUniqueEmail = true;
+            })
+                .AddEntityFrameworkStores<IslandDbContext>();
+
             services.AddDbContextPool<IslandDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("IslandsDb2"));
@@ -78,6 +86,9 @@ namespace Aruba
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseNodeModules();
+
+            app.UseAuthentication(); // need to be before Routing and Enpoints congiguration!
+            app.UseAuthorization();
 
             app.UseSecurityMiddleware();
             app.UseRouting();

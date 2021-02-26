@@ -1,5 +1,4 @@
-﻿using System;
-namespace Aruba.Core
+﻿namespace Aruba.Core
 {
     public class ElementOccurrence
     {

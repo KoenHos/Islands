@@ -75,7 +75,7 @@ namespace Aruba.Controllers
         {
             _elementDataService.Truncate();
             _elementDataService.Commit();
-            _elementSeeder.Seed();
+            _elementSeeder.SeedAsync().Wait();
 
             IEnumerable<Element> _elements = GetElements().OrderBy(e => e.AtomicNumber);
 

@@ -1,4 +1,5 @@
 ﻿using Aruba.Core;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 // https://database.guide/how-to-install-sql-server-on-a-mac/
@@ -6,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Aruba.Data
 {
-    public class IslandDbContext : DbContext
+    public class IslandDbContext : IdentityDbContext<StoreUser>
     {
         public IslandDbContext(DbContextOptions<IslandDbContext> options) : base(options)
         {
@@ -18,6 +19,7 @@ namespace Aruba.Data
         public DbSet<HolidayPackage> HolidayPackages { get; set; }
 
         public DbSet<Element> Elements { get; set; }
+       // public DbSet<StoreUser> StoreUser { get; set; }
         public DbSet<ElementOccurrence> ElementOccurrences { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -25,6 +27,7 @@ namespace Aruba.Data
             modelBuilder.Entity<Element>(entity =>
             {
                 entity.HasIndex(p => new { p.Name });
+               // entity.HasKey(p => p.AtomicNumber);
 
                 entity.Property(p => p.Symbol).HasMaxLength(2);
                 //entity.Property(p => p.Description).HasColumnType("varchar 1024");
@@ -36,6 +39,7 @@ namespace Aruba.Data
                 //entity.Property(p => p.Description).IsRequired();
             });
 
+            base.OnModelCreating(modelBuilder);
         }
 
     }
