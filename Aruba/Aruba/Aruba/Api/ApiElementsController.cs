@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Aruba.Core;
 using Aruba.Data;
 using Aruba.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -20,13 +22,18 @@ namespace Aruba.Api
         private readonly IElementDataService _elementDataService;
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
+        private readonly UserManager<StoreUser> _userManager;
 
         
-        public ApiElementsController(IElementDataService elementDataService, ILogger<ApiElementsController> logger, IMapper mapper)
+        public ApiElementsController(IElementDataService elementDataService,
+            ILogger<ApiElementsController> logger,
+            IMapper mapper,
+            UserManager<StoreUser> userManager)
         {
             _elementDataService = elementDataService;
             _logger = logger;
             _mapper = mapper;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -34,9 +41,14 @@ namespace Aruba.Api
         [ProducesResponseType(400)]
         public ActionResult<IEnumerable<Element>> Get()
         {
+            var userName = User.Identity.Name;
+
+            var elements = _elementDataService.GetByName("");
+            var elementsByUser = _elementDataService.GetByUserAndName(userName, "");
+
             try
             {
-                return Ok(_mapper.Map<IEnumerable<Element>, IEnumerable<ElementViewModel>>(_elementDataService.GetByName("")));
+                return Ok(_mapper.Map<IEnumerable<Element>, IEnumerable<ElementViewModel>>(elementsByUser));
             }
             catch (Exception ex)
             {
@@ -64,7 +76,7 @@ namespace Aruba.Api
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]ElementViewModel model)
+        public async Task<IActionResult> Post([FromBody]ElementViewModel model)
         {
             try
             {
@@ -80,6 +92,9 @@ namespace Aruba.Api
                     //    Type = elementViewModel.Type
                     //};
                     Element element = _mapper.Map<ElementViewModel, Element>(model);
+
+                    var currentUser = await _userManager.FindByNameAsync(User.Identity.Name);
+                    element.User = currentUser;
 
                     _elementDataService.Add(element);
                     if (_elementDataService.Commit())

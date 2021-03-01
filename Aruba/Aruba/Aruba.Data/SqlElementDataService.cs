@@ -114,6 +114,15 @@ namespace Aruba.Data
             return element;
         }
 
+        public IEnumerable<Element> GetByUserAndName(string username, string name)
+        {
+            var query = from i in _db.Elements
+#pragma warning disable RECS0063 // Warns when a culture-aware 'StartsWith' call is used by default.
+                        where (i.Name.StartsWith(name) || string.IsNullOrEmpty(name)) && i.User.UserName == username
+#pragma warning restore RECS0063 // Warns when a culture-aware 'StartsWith' call is used by default.
+                        select i;
+            return query.OrderBy(i => i.Name);
+        }
 
         // ElementOccurences --> Move to separate class? ==============================================
 
@@ -156,5 +165,6 @@ namespace Aruba.Data
             return true;
         }
 
+     
     }
 }
