@@ -92,7 +92,7 @@ namespace Aruba.Controllers
 
         private  IEnumerable<Element> GetElements(bool heavierThanOxygen = false)
         {
-            return _elementDataService.GetByName("", heavierThanOxygen);
+            return _elementDataService.GetByName(""  ,  heavierThanOxygen);
         }
 
         public IActionResult UnKnownAction()

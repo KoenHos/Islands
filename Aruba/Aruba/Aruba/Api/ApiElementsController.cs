@@ -43,7 +43,7 @@ namespace Aruba.Api
         {
             var userName = User.Identity.Name;
 
-            var elements = _elementDataService.GetByName("");
+            var elements = _elementDataService.GetByName("", includeHeavierThanOxygen);
             var elementsByUser = _elementDataService.GetByUserAndName(userName, "");
 
             try

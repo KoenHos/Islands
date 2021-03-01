@@ -6,7 +6,7 @@ namespace Aruba.Data
 {
     public interface IElementDataService
     {
-            IEnumerable<Element> GetByName(string name);
+            IEnumerable<Element> GetByName(string name, bool heavierThanOxygen);
             IEnumerable<Element> GetByUserAndName(string username, string name);
             Element GetById(int id);
             Element Update(Element element);
