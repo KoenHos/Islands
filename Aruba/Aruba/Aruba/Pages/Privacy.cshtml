@@ -9,10 +9,23 @@
 
 
 <p>
-    <h2>EF</h2>
-    From project containing/applying the connection string:
+    <h2>To Do</h2>
+
     <ol>
-        <li>dotnet ef migrations add AddElementTable2 --project ../Aruba.Data</li>
-        <li>dotnet ef database update </li>
+        <li>Web api courses</li>
+        <li>Specflow + Gherkin</li>
+        <li>Code UI course </li>
+        <li>Dynamics course</li>
+    </ol>
+</p>
+
+<p>
+    <h2>Steps to create a fresh/new sql server via a Docker container</h2>
+    <ol>
+        <li>stop and remove container</li>
+        <li>start new container: docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=LaPalma001Canary' -p 1433:1433 --name sql1 -h -sql1 -d mcr.microsoft.com/mssql/server:2019-latest </li>
+        <li>remove all migrationfiles from project</li>
+        <li>create 1st migraton: dotnet ef migrations add recreateDb  --project ../Aruba.Data</li>
+        <li>Update db: dotnet ef database update</li>
     </ol>
 </p>

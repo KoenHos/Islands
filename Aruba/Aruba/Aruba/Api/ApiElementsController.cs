@@ -39,7 +39,7 @@ namespace Aruba.Api
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        public ActionResult<IEnumerable<Element>> Get()
+        public ActionResult<IEnumerable<Element>> Get(bool includeHeavierThanOxygen = false)
         {
             var userName = User.Identity.Name;
 
