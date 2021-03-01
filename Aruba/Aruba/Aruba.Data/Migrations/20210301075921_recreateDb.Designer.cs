@@ -4,14 +4,16 @@ using Aruba.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Aruba.Data.Migrations
 {
     [DbContext(typeof(IslandDbContext))]
-    partial class IslandDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210301075921_recreateDb")]
+    partial class recreateDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

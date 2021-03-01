@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Threading.Tasks;
+
 namespace Aruba.Data
 {
 
     public interface IElementSeeder
     {
-       void Seed();
+       Task SeedAsync();
     }
 
 }

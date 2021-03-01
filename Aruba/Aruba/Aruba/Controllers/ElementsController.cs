@@ -6,12 +6,14 @@ using Aruba.Core;
 using Aruba.Services;
 using Aruba.Data;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Aruba.Controllers
 {
+    [Authorize]
     public class ElementsController : Controller
     {
         private readonly IMailService _mailService;
@@ -75,7 +77,7 @@ namespace Aruba.Controllers
         {
             _elementDataService.Truncate();
             _elementDataService.Commit();
-            _elementSeeder.Seed();
+            _elementSeeder.SeedAsync().Wait();
 
             IEnumerable<Element> _elements = GetElements().OrderBy(e => e.AtomicNumber);
 
@@ -90,7 +92,7 @@ namespace Aruba.Controllers
 
         private  IEnumerable<Element> GetElements(bool heavierThanOxygen = false)
         {
-            return _elementDataService.GetByName("", heavierThanOxygen);
+            return _elementDataService.GetByName(""  ,  heavierThanOxygen);
         }
 
         public IActionResult UnKnownAction()

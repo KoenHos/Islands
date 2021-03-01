@@ -1,0 +1,45 @@
+﻿@model LoginViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Login";
+}
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h3>Login</h3>
+    </div>
+    <div class="card-body">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Username">Username</label>
+                        <input asp-for="Username" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password">Username</label>
+                        <input asp-for="Password" type="password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input asp-for="RememberMe" typeof="checkbox" class="form-check-input" />
+                            <label asp-for="RememberMe" typeof="checkbox" class="form-check-label">Remember me</label>
+                        </div>
+                        <span asp-validation-for="RememberMe" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn btn-success">
+                    </div>
+                </form>
+    </div>
+    <div class="card-footer">
+    </div>
+</div>

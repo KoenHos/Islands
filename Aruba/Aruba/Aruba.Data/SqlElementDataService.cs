@@ -69,6 +69,8 @@ namespace Aruba.Data
         {
             _logger.LogInformation($"Truncate elements tabe");
 
+            TruncateOccurence();  //ToDO: refactor this
+
             var elements = GetByName("");
             _db.Elements.RemoveRange(elements);
         }
@@ -115,6 +117,15 @@ namespace Aruba.Data
             return element;
         }
 
+        public IEnumerable<Element> GetByUserAndName(string username, string name)
+        {
+            var query = from i in _db.Elements
+#pragma warning disable RECS0063 // Warns when a culture-aware 'StartsWith' call is used by default.
+                        where (i.Name.StartsWith(name) || string.IsNullOrEmpty(name)) && i.User.UserName == username
+#pragma warning restore RECS0063 // Warns when a culture-aware 'StartsWith' call is used by default.
+                        select i;
+            return query.OrderBy(i => i.Name);
+        }
 
         // ElementOccurences --> Move to separate class? ==============================================
 
@@ -138,5 +149,25 @@ namespace Aruba.Data
             return _db.ElementOccurrences.Where(e => e.Element == _db.Elements.Find(id));
         }
 
+        //Todo Add try catch
+        public bool TruncateOccurence()
+        {
+            _logger.LogInformation($"Truncate elements tabe");
+
+            var occurences = _db.ElementOccurrences.Where(e => !string.IsNullOrEmpty(e.Description));
+
+            try
+            {
+                _db.ElementOccurrences.RemoveRange(occurences);
+                _db.SaveChanges();
+            }
+            catch
+            {
+
+            }
+            return true;
+        }
+
+     
     }
 }
