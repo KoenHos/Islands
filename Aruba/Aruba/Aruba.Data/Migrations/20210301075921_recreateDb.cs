@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Aruba.Data.Migrations
 {
-    public partial class recreateDb10 : Migration
+    public partial class recreateDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

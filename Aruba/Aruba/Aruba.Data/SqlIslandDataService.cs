@@ -53,7 +53,7 @@ namespace Aruba.Data
 
         public int GetCountOfIslands()
         {
-            return db.Islands.Count();
+             return db.Islands.Count();
         }
 
         public Island Update(Island updatedIsland)

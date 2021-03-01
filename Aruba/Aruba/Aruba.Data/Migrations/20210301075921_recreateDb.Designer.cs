@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Aruba.Data.Migrations
 {
     [DbContext(typeof(IslandDbContext))]
-    [Migration("20210226083012_recreateDb10")]
-    partial class recreateDb10
+    [Migration("20210301075921_recreateDb")]
+    partial class recreateDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

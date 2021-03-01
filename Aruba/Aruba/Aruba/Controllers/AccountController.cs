@@ -46,7 +46,7 @@ namespace Aruba.Controllers
                     }
                     else
                     {
-                        RedirectToAction("Index", "Elements");
+                        return RedirectToAction("Index", "Elements");
                     }
                 }
 
@@ -56,6 +56,14 @@ namespace Aruba.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login", "Account");
+        }
+
 
     }
 }
